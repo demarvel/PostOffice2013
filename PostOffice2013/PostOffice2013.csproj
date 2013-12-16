@@ -133,6 +133,7 @@
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Departure.cs" />
     <Compile Include="Models\FeedbackOnTheWorker.cs" />
+    <Compile Include="Models\Packing.cs" />
     <Compile Include="Models\PensionPayment.cs" />
     <Compile Include="Models\PostItem.cs" />
     <Compile Include="Models\PostOffice.cs" />

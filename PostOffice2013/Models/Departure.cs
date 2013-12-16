@@ -6,12 +6,21 @@ using System.Web;
 
 namespace PostOffice2013.Models
 {
-    //Мешок "М"
-    public class BagM
+    //Извещение
+    public class Notice
     {
         [Key]
         [Display(Name = "Почтовое отправление")]
         public virtual PostItem PostItem { get; set; }
+        [Required]
+        [Display(Name = "Дата извещения")]
+        public DateTime DateOfNotification { get; set; }
+        [Display(Name = "Повторное отправление")]
+        public bool SecondNotice { get; set; }
+    }
+    //Мешок "М"
+    public class BagM : PostItem
+    {
         [Display(Name = "Заказное")]
         public bool Registered { get; set; }
         [Required]
@@ -19,11 +28,8 @@ namespace PostOffice2013.Models
         public string Weight { get; set; }
     }
     //Бандероль
-    public class Banderoll
+    public class Banderoll : PostItem
     {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
         [Display(Name = "Заказное")]
         public bool Registered { get; set; }
         [Required]
@@ -43,11 +49,8 @@ namespace PostOffice2013.Models
         public int height { get; set; }
     }
     //Письмо
-    public class Letter
+    public class Letter : PostItem
     {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
         [Display(Name = "Заказное")]
         public bool Registered { get; set; }
         [Display(Name = "Первый класс")]
@@ -56,24 +59,9 @@ namespace PostOffice2013.Models
         [Display(Name = "Объявленная ценность")]
         public int DeclaredValue { get; set; }
     }
-    //Извещение
-    public class Notice
-    {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
-        [Required]
-        [Display(Name = "Дата извещения")]
-        public DateTime DateOfNotification { get; set; }
-        [Display(Name = "Повторное отправление")]
-        public bool SecondNotice { get; set; }
-    }
     //Посылка
-    public class Posilka
+    public class Posilka : PostItem
     {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
         [Required]
         [Display(Name = "Объявленная ценность")]
         public int DeclaredValue { get; set; }
@@ -91,11 +79,8 @@ namespace PostOffice2013.Models
         public int height { get; set; }
     }
     //Почтовый контейнер
-    public class PostalContainer
+    public class PostalContainer :PostItem
     {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
         [Required]
         [Display(Name = "Объявленная ценность")]
         public int DeclaredValue { get; set; }
@@ -113,11 +98,8 @@ namespace PostOffice2013.Models
         public int height { get; set; }
     }
     //Почтовая карточка
-    public class PostCard
+    public class PostCard : PostItem
     {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
         [Display(Name = "Заказное")]
         public bool Registered { get; set; }
         [Display(Name = "Текст сообщения")]
@@ -126,20 +108,14 @@ namespace PostOffice2013.Models
         public int Payment { get; set; }
     }
     //Секограмма
-    public class Secogramma
+    public class Secogramma : PostItem
     {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
         [Display(Name = "Заказное")]
         public bool Registered { get; set; }
     }
     //Мелкий пакет
-    public class SmallPacket
+    public class SmallPacket : PostItem
     {
-        [Key]
-        [Display(Name = "Почтовое отправление")]
-        public virtual PostItem PostItem { get; set; }
         [Display(Name = "Заказное")]
         public bool Registered { get; set; }
         [Required]

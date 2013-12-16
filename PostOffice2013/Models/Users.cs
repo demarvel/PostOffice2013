@@ -41,9 +41,6 @@ namespace PostOffice2013.Models
     public class Worker : User
     {
         [Required]
-        [Display(Name = "Номер работника")]
-        public int WorkerNumber { get; set; }
-        [Required]
         [Display(Name = "Стаж работы")]
         public int LengthOfWork { get; set; }
         [Required]
@@ -67,8 +64,6 @@ namespace PostOffice2013.Models
     //Пенсионер
     public class Pensioner : User
     {
-        [Display(Name = "ID Пенсионера")]
-        public int IdPensiner { get; set; }
         [Required]
         [Display(Name = "Серия паспорта")]
         public int SeriesOfPassport { get; set; }

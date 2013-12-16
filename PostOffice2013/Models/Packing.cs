@@ -6,22 +6,21 @@ using System.Web;
 
 namespace PostOffice2013.Models
 {
-    //Марка
-    public class Brand
+    public class Packing
     {
         [Key]
         [Display(Name = "ID Покупки")]
         public int IDPurchase { get; set; }
         [Required]
-        [Display(Name = "Тип марки")]
-        public string TypeBrand { get; set; }
+        [Display(Name = "Тип упаковки")]
+        public string TypePacking { get; set; }
         [Required]
         [Display(Name = "Стоимость")]
         public int Cost { get; set; }
         [Required]
         [Display(Name = "Количество")]
         public int Count { get; set; }
-        [Display(Name ="Продажа")]
+        [Display(Name = "Продажа")]
         public virtual SaleOfGoods SaleOfGoods { get; set; }
     }
 }
