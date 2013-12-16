@@ -10,17 +10,38 @@ namespace PostOffice2013.Models
     public class PostItem
     {
         [Key]
+        [Display (Name = "ID Операции")]
         public int IdOperacion { get; set; }
+        [Required]
+        [Display(Name = "ID Работника")]
         public int IdWorker { get; set; }
+        [Required]
+        [Display(Name = "Отправитель")]
         public string Sender { get; set; }
+        [Required]
+        [Display(Name = "Адрес отправителя")]
         public string SenderAddress { get; set; }
+        [Required]
+        [Display(Name = "Адрес получателя")]
         public string RecipientAddress { get; set; }
+        [Required]
+        [Display(Name = "Тип отправления")]
         public string TypeDeparture { get; set; }
+        [Required]
+        [Display(Name = "Стоимость отправления")]
         public int CostOfSending { get; set; }
+        [Required]
+        [Display(Name = "Статус почтового отправления")]
         public string StatusOfMandate { get; set; }
+        [Required]
+        [Display(Name = "Наложенный платеж")]
         public bool CashOnDelivery { get; set; }
+        [Required]
+        [Display(Name = "Цена наложенного платежа")]
         public int PriceCOD { get; set; }
+        [Display(Name = "Получение/Отправление")]
         public bool SentReceived { get; set; }
+        [Display(Name = "Отказ получения")]
         public bool FailureObtaining { get; set; }
     }
 }

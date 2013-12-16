@@ -10,9 +10,16 @@ namespace PostOffice2013.Models
     public class PostOffice
     {
         [Key]
+        [Display (Name = "Почтовый индекс")]
         public int PostIndex { get; set; }
+        [Required]
+        [Display (Name = "Адрес почтового отделения")]
         public string Address { get; set; }
+        [Required]
+        [Display(Name = "Контактый телефон")]
         public string ContactPhone { get; set; }
+        [Required]
+        [Display(Name = "Часы работы почтового отделения")]
         public string OpeningHours { get; set; }
     }
     //Упаковка

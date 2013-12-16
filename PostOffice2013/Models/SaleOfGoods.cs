@@ -10,9 +10,16 @@ namespace PostOffice2013.Models
     public class SaleOfGoods
     {
         [Key]
+        [Display (Name = "ID Покупки")]
         public int IdPurchase { get; set; }
+        [Required]
+        [Display(Name = "Время покупки")]
         public DateTime? TimeOfPurchase { get; set; }
+        [Required]
+        [Display(Name = "Итоговая цена")]
         public int TotalPrice { get; set; }
+        [Required]
+        [Display(Name = "Количество купленного товара")]
         public int NumberOfPurchasedGoods { get; set; }
     }
 }
