@@ -12,17 +12,15 @@ namespace PostOffice2013.Models
         [Key]
         [Display (Name = "ID Выплаты")]
         public int IdPayment { get; set; }
-        [Required]
-        [Display(Name = "ID Пенсионера")]
-        public int IdPensiner { get; set; }
+        [Display(Name = "Пенсионер")]
+        public virtual Pensioner Pensioner { get; set; }
         [Required]
         [Display(Name = "Дата получения")]
         public DateTime DataPayment { get; set; }
         [Required]
         [Display(Name = "Сумма выплаты")]
         public int Payout { get; set; }
-        [Required]
-        [Display(Name = "ID Работника")]
-        public int IdWorker { get; set; }
+        [Display(Name = "Работник")]
+        public virtual Worker Worker { get; set; }
     }
 }

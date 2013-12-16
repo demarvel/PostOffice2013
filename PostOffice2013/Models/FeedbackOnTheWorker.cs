@@ -21,8 +21,7 @@ namespace PostOffice2013.Models
         [Required]
         [Display(Name = "Ответ администрации")]
         public string AdmResponse { get; set; }
-        [Required]
-        [Display(Name = "ID Работника")]
-        public int IdWorker { get; set; }
+        [Display(Name = "Работник")]
+        public virtual Worker Worker { get; set; }
     }
 }

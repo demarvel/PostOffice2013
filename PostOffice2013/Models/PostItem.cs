@@ -12,9 +12,8 @@ namespace PostOffice2013.Models
         [Key]
         [Display (Name = "ID Операции")]
         public int IdOperacion { get; set; }
-        [Required]
-        [Display(Name = "ID Работника")]
-        public int IdWorker { get; set; }
+        [Display(Name = "Работник")]
+        public virtual Worker Worker { get; set; }
         [Required]
         [Display(Name = "Отправитель")]
         public string Sender { get; set; }
@@ -43,5 +42,23 @@ namespace PostOffice2013.Models
         public bool SentReceived { get; set; }
         [Display(Name = "Отказ получения")]
         public bool FailureObtaining { get; set; }
+        [Display(Name = "Количество отправлений Мешок М")]
+        public virtual ICollection<BagM> BagMs {get;set;}
+        [Display(Name = "Количество отправлений Бандеролей")]
+        public virtual ICollection<Banderoll> Banderolls {get;set;}
+        [Display(Name = "Количество отправлений Писем")]
+        public virtual ICollection<Letter> Letters {get;set;}
+        [Display(Name = "Количество отправлений Извещений")]
+        public virtual ICollection<Notice> Notices {get;set;}
+        [Display(Name = "Количество отправлений Посылок")]
+        public virtual ICollection<Posilka> Posilkas {get;set;}
+        [Display(Name = "Количество отправлений Почтовых контейнеров")]
+        public virtual ICollection<PostalContainer> PostalContainers {get;set;}
+        [Display(Name = "Количество отправлений Почтовых карт")]
+        public virtual ICollection<PostCard> PostCards {get;set;}
+        [Display(Name = "Количество отправлений Секограмм")]
+        public virtual ICollection<Secogramma> Secogrammas {get;set;}
+        [Display(Name = "Количество отправлений Мелких пакотов")]
+        public virtual ICollection<SmallPacket> SmallPackets { get; set; }
     }
 }
